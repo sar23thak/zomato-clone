@@ -12,7 +12,7 @@ class UPIPaymentStrategy : public PaymentStrategy{
     public:
         UPIPaymentStrategy(const string& number)
         {
-            this->MobileNumber=number;
+            MobileNumber=number;
         }
         void pay(double amount) override{
             cout<<"Paying Rs "<<amount<<" through UPI linke with the mobile: "<<MobileNumber<<endl;

@@ -4,19 +4,19 @@
 #include <vector>
 #include <iostream>
 #include "../models/Order.h"
-#include <Order.h>
+#include "../models/Order.h"
 using namespace std;
 
 class OrderManager{
     private:
-        vector<Order> orders;
+        vector<Order*> orders;
         static OrderManager* instance;
         OrderManager()
         {
             //private constructor
         }
     public:
-        OrderManager* getInstance()
+        static OrderManager* getInstance()
         {
             if(instance==NULL)
             {
@@ -24,7 +24,7 @@ class OrderManager{
             }
             return instance;
         }
-        void addOrder(Order order){
+        void addOrder(Order* order){
             orders.push_back(order);
         }
         void listOrders()
@@ -32,8 +32,8 @@ class OrderManager{
             cout << "\n--- All Orders ---" << endl;
             for(auto& o: orders)
             {
-                cout<<o.getType()<<" order for user: "<<o.getUser()->getName()<<"Total Rs "<<o.getTotal()
-                    <<" Scheduled at "<<o.getSchedule()<<endl;
+                cout<<o->getType()<<" order for user: "<<o->getUser()->getName()<<"Total Rs "<<o->getTotal()
+                    <<" Scheduled at "<<o->getSchedule()<<endl;
             }
         }
 

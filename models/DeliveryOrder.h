@@ -22,7 +22,7 @@ class DeliveryOrder: public Order{
         {
             return UserAddress;
         }
-        void setUserAddress(string& add)
+        void setUserAddress(const string& add)
         {
             UserAddress=add;
         }

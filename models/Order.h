@@ -42,7 +42,7 @@ class Order{
         virtual string getType()=0;
         
         //getters and setters
-        int getUserId()
+        int getOrderId()
         {
             return orderId;
         }
@@ -62,7 +62,7 @@ class Order{
         {
             restaurant=res;
         }
-        void setItems(vector<MenuItem>& cartItems)
+        void setItems(const vector<MenuItem>& cartItems)
         {
             items=cartItems;
             total=0;
@@ -75,7 +75,7 @@ class Order{
         {
             return items;
         }
-        void setSchedule(string& time)
+        void setSchedule(const string& time)
         {
             scheduled=time;
         }
@@ -90,6 +90,10 @@ class Order{
         void setTotal(double total)
         {
             this->total=total;
+        }
+        void setPaymentStrategy(PaymentStrategy* paymentStrategy)
+        {
+            this->paymentStrategy = paymentStrategy;
         }
 };
 int Order::nextOrderId=0;

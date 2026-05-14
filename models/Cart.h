@@ -42,6 +42,16 @@ class Cart{
             items.clear();
             restaurant=NULL;
         }
+        void setRestaurant(Restaurant* r){
+            restaurant=r;
+        }
+        Restaurant* getRestaurant()
+        {
+            return restaurant;
+        }
+        const vector<MenuItem>& getItems() const {
+        return items;
+    }
 };
 
 #endif

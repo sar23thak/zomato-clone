@@ -18,11 +18,11 @@ class PickupOrder: public Order{
         {
             return "pickup";
         }
-        string getUserAddress()
+        string getRestaurantAddress()
         {
             return RestaurantAddress;
         }
-        void setUserAddress(string& add)
+        void setRestaurantAddress(const string& add)
         {
             RestaurantAddress=add;
         }
